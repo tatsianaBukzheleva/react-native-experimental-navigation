@@ -11,7 +11,7 @@
  */
 'use strict';
 
-const AsyncStorage = require('react-native').AsyncStorage;
+import AsyncStorage from '@react-native-community/async-storage';
 const Linking = require('react-native').Linking;
 const NavigationPropTypes = require('./NavigationPropTypes');
 const NavigationStateUtils = require('./NavigationStateUtils');
