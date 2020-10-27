@@ -101,10 +101,10 @@ class NavigationAnimatedView
     };
   }
 
-  componentWillMount(): void {
-    this._onLayout = this._onLayout.bind(this);
-    this._onProgressChange = this._onProgressChange.bind(this);
-  }
+//   componentWillMount(): void {
+//     this._onLayout = this._onLayout.bind(this);
+//     this._onProgressChange = this._onProgressChange.bind(this);
+//   }
 
   componentDidMount(): void {
     this._positionListener =
@@ -137,7 +137,7 @@ class NavigationAnimatedView
     this.state.position.removeListener(this._positionListener);
   }
 
-  _onProgressChange(data: Object): void {
+  _onProgressChange = (data: Object): void => {
     const delta = Math.abs(data.value - this.props.navigationState.index);
     if (delta > Number.EPSILON) {
       return;
@@ -218,7 +218,7 @@ class NavigationAnimatedView
     return null;
   }
 
-  _onLayout(event: any): void {
+  _onLayout = (event: any): void => {
     const {height, width} = event.nativeEvent.layout;
 
     const layout = {
