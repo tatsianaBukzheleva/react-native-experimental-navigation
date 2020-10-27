@@ -111,7 +111,7 @@ class NavigationAnimatedView
       this.state.position.addListener(this._onProgressChange);
   }
 
-  componentWillReceiveProps(nextProps: Props): void {
+  UNSAFE_componentWillReceiveProps(nextProps: Props): void {
     if (nextProps.navigationState !== this.props.navigationState) {
       this.setState({
         scenes: NavigationScenesReducer(
