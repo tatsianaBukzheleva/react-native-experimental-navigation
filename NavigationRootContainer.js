@@ -110,10 +110,10 @@ class NavigationRootContainer extends React.Component<any, Props, State> {
     this.state = { navState };
   }
 
-  componentWillMount(): void {
-    (this: any).handleNavigation = this.handleNavigation.bind(this);
-    (this: any)._handleOpenURLEvent = this._handleOpenURLEvent.bind(this);
-  }
+//   componentWillMount(): void {
+//     (this: any).handleNavigation = this.handleNavigation.bind(this);
+//     (this: any)._handleOpenURLEvent = this._handleOpenURLEvent.bind(this);
+//   }
 
   componentDidMount(): void {
     if (this.props.linkingActionMap) {
@@ -142,7 +142,7 @@ class NavigationRootContainer extends React.Component<any, Props, State> {
     }
   }
 
-  _handleOpenURLEvent(event: {url: string}): void {
+  _handleOpenURLEvent = (event: {url: string}): void => {
     this._handleOpenURL(event.url);
   }
 
@@ -162,7 +162,7 @@ class NavigationRootContainer extends React.Component<any, Props, State> {
     };
   }
 
-  handleNavigation(action: Object): boolean {
+  handleNavigation = (action: Object): boolean => {
     const navState = this.props.reducer(this.state.navState, action);
     if (navState === this.state.navState) {
       return false;
